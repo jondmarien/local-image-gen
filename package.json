@@ -1,0 +1,14 @@
+{
+  "name": "local-image-gen",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Local image generation on an 8 GB consumer GPU: FLUX.2 [klein] 4B GGUF over a running ComfyUI, with one-shot model setup, integrated GAN upscaling, and version-controlled workflows. Zero npm dependencies — runs on Node 18+ or Bun.",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "gen": "node scripts/generate.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
