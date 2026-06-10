@@ -6,8 +6,8 @@ Extracted from a production Instagram-content pipeline; this repo is just the im
 
 ## What you get
 
-- **`npm run setup`** — one command installs every model into your ComfyUI: the klein 4B **Q5_K_S** GGUF (~3 GB), the Qwen3-4B text encoder, the FLUX.2 VAE, the RealESRGAN upscaler, the ComfyUI-GGUF custom node, and the workflows. Idempotent.
-- **`npm run gen -- "your prompt"`** — generates via ComfyUI's HTTP API. Sensible 8 GB defaults (1024×1280, 8 steps, CFG 1.2 with a text-suppression negative), everything overridable.
+- **`bun run setup`** — one command installs every model into your ComfyUI: the klein 4B **Q5_K_S** GGUF (~3 GB), the Qwen3-4B text encoder, the FLUX.2 VAE, the RealESRGAN upscaler, the ComfyUI-GGUF custom node, and the workflows. Idempotent.
+- **`bun run gen -- "your prompt"`** — generates via ComfyUI's HTTP API. Sensible 8 GB defaults (1024×1280, 8 steps, CFG 1.2 with a text-suppression negative), everything overridable.
 - **`--upscale`** — 4× GAN upscale → lanczos downscale, integrated into the same graph for crisper fine detail.
 - **`--ui-format`** — run the workflow **file** in `./workflows/` instead of the code-built graph: edit it in the ComfyUI web UI, save, re-run. WYSIWYG.
 - **Thermal pacing** — a 25 s cooldown between generations (tunable) so sustained FLUX runs don't trip an OS watchdog on thermally-marginal rigs.
@@ -28,13 +28,13 @@ git clone https://github.com/jondmarien/local-image-gen
 cd local-image-gen
 
 # 1. point at your ComfyUI install and pull all models (~12 GB total, one time)
-npm run setup -- --comfyui-dir="E:\ComfyUI"
+bun run setup -- --comfyui-dir="E:\ComfyUI"
 
 # 2. start ComfyUI, then generate
-npm run gen -- "A single hard rim light rakes across a brass key dissolving into fine particles in the dark, premium editorial key art, generous negative space below"
+bun run gen -- "A single hard rim light rakes across a brass key dissolving into fine particles in the dark, premium editorial key art, generous negative space below"
 ```
 
-Images land in `./output/`. Run `npm run gen -- --help` and `npm run setup -- --help` for everything.
+Images land in `./output/`. Run `bun run gen -- --help` and `bun run setup -- --help` for everything.
 
 ## Writing prompts klein actually responds to
 

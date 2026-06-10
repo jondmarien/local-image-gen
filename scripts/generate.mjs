@@ -19,7 +19,7 @@ const HELP = `
 local-image-gen — FLUX.2 [klein] 4B GGUF over a running ComfyUI (8 GB VRAM friendly)
 
 USAGE
-  npm run gen -- "<prompt>" ["<prompt 2>" ...] [flags]      (or: bun run gen / node scripts/generate.mjs)
+  bun run gen -- "<prompt>" ["<prompt 2>" ...] [flags]      (or: npm run gen / node scripts/generate.mjs)
 
   Each positional argument is one prompt → one image. Add --file=prompts.txt to read more
   prompts (one per line, # comments skipped). Images land in ./output/ as 001.png, 002.png …
@@ -67,9 +67,9 @@ ENV  COMFYUI_URL (http://127.0.0.1:8000) · COMFYUI_DIR (E:\\ComfyUI) — models
      <COMFYUI_DIR>/models/{unet,text_encoders,vae,upscale_models}
 
 EXAMPLES
-  npm run gen -- "A single hard rim light rakes across a brass key dissolving into fine particles in the dark, premium editorial key art, generous negative space below"
-  npm run gen -- "..." --upscale --passes=6 --seed=7
-  npm run gen -- --file=prompts.txt --q6 --upscale --upscale-model=4x-UltraSharp.pth
+  bun run gen -- "A single hard rim light rakes across a brass key dissolving into fine particles in the dark, premium editorial key art, generous negative space below"
+  bun run gen -- "..." --upscale --passes=6 --seed=7
+  bun run gen -- --file=prompts.txt --q6 --upscale --upscale-model=4x-UltraSharp.pth
 `;
 
 if (flags.has("--help") || flags.has("-h") || args.includes("-h")) { console.log(HELP); process.exit(0); }

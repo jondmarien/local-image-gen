@@ -21,7 +21,7 @@ const HELP = `
 local-image-gen setup — one-shot model install into an existing ComfyUI
 
 USAGE
-  npm run setup -- --comfyui-dir="E:\\ComfyUI" [flags]     (or set COMFYUI_DIR env)
+  bun run setup -- --comfyui-dir="E:\\ComfyUI" [flags]     (or set COMFYUI_DIR env)
 
 WHAT IT DOES (idempotent — safe to re-run; skips anything already present)
   1. FLUX.2 [klein] 4B GGUF (Q5_K_S, ~3 GB, Apache-2.0)   → models/unet
@@ -39,7 +39,7 @@ FLAGS
   --help, -h           this help
 
 PREREQS  a working ComfyUI install (https://www.comfy.org/download), git, and the hf CLI.
-AFTER    start ComfyUI, then:  npm run gen -- "your prompt here"
+AFTER    start ComfyUI, then:  bun run gen -- "your prompt here"
 `;
 if (flags.has("--help") || flags.has("-h") || args.includes("-h")) { console.log(HELP); process.exit(0); }
 
@@ -113,4 +113,4 @@ if (existsSync(wfDest)) {
   }
 } else console.warn(`  ⚠ ${wfDest} not found — open the files in ./workflows/ via the ComfyUI UI instead.`);
 
-console.log(`\n✓ Setup done. Start ComfyUI, then:\n    npm run gen -- "A single hard rim light rakes across a brass key dissolving into fine particles in the dark, premium editorial key art"\n  (set COMFYUI_DIR=${COMFY} in your shell profile so generate.mjs finds the model dirs)`);
+console.log(`\n✓ Setup done. Start ComfyUI, then:\n    bun run gen -- "A single hard rim light rakes across a brass key dissolving into fine particles in the dark, premium editorial key art"\n  (set COMFYUI_DIR=${COMFY} in your shell profile so generate.mjs finds the model dirs)`);
