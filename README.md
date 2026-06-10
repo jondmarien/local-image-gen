@@ -62,6 +62,12 @@ klein has **no prompt upsampler** — the literal text is everything. What works
 
 `workflows/` holds the exact graphs the CLI builds, in ComfyUI's UI format — open them in the web UI to inspect or tweak. `setup` copies them into ComfyUI's workflow library. If you edit one and want the CLI to run your edits, use `--ui-format`. (If you change the code's graph instead, update the files — they're meant to stay mirrors.)
 
+### Default Workflow
+<img width="1806" height="983" alt="image" src="https://github.com/user-attachments/assets/61dcf22c-44ee-4fee-8168-517bf34969b0" />
+
+### Upscaler Workflow:
+<img width="2331" height="895" alt="image" src="https://github.com/user-attachments/assets/9f2b7482-79e3-4a7a-a71b-3e7696c25735" />
+
 ## Troubleshooting
 
 - **"Can't reach ComfyUI"** — start ComfyUI first; if it's not on `127.0.0.1:8000`, set `COMFYUI_URL`.
